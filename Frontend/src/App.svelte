@@ -188,7 +188,7 @@
                 <div class="absolute top-0 right-0 text-sm">
                   {idx == 0 ? "🤓" : emojis[idx]}
                 </div>
-                {#if loadings.length - 1 == idx}
+                {#if 0 == idx}
                   <img src="/profile.png" />
                 {:else}
                   <span class="text-xl">{user.name[0].toUpperCase()}</span>
@@ -199,13 +199,9 @@
               <div class="text-base">{user.name}</div>
               <label for="my-modal-4{user.id}" class="cursor-pointer">
                 <div class="badge badge-primary rounded my-1">
-                  {idx == loadings.length - 1
+                  {idx == 0
                     ? "Built different"
-                    : idx == 0
-                    ? "Hoeless supreme"
-                    : user.title == ""
-                    ? "Edit placeholder"
-                    : user.title}
+                    : user.title == ""?"Edit placeholder":user.title}
                 </div></label
               >
               <div class="mb-1">
