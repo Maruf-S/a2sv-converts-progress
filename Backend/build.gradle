@@ -1,0 +1,44 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+	id "com.graphql_java_generator.graphql-gradle-plugin" version "${graphQLPluginVersion}"
+}
+
+group = 'com.example.maruf'
+version = '0.0.1-SNAPSHOT'
+//sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok:1.18.22'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	runtimeOnly 'com.h2database:h2'
+	testCompileOnly 'org.projectlombok:lombok:1.18.22'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+	implementation "org.apache.poi:poi:4.1.2"
+	implementation "org.apache.poi:poi-ooxml:4.1.2"
+	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.10.0'
+	implementation 'com.google.code.gson:gson:2.9.1'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+// Add these START
+bootJar {
+	archiveClassifier.set('boot')
+}
+
+jar {
+	archiveClassifier.set('')
+}
+// Add these END
