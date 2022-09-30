@@ -23,7 +23,7 @@ import java.util.List;
 public class SheetsServiceUtil {
     public List<String> getUsers() throws IOException, URISyntaxException {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        InputStream stream = getClass().getClassLoader().getResourceAsStream("static/New_Converts_Sheet.xlsx");
+        InputStream stream = getClass().getClassLoader().getResourceAsStream("static/new.xlsx");
 //        FileInputStream file = new FileInputStream(stream);
         //Create Workbook instance holding reference to .xlsx file
         XSSFWorkbook workbook = new XSSFWorkbook(stream);
@@ -35,15 +35,17 @@ public class SheetsServiceUtil {
         List<String> players = new ArrayList<>();
         while (rowIterator.hasNext()) {
             Row row = rowIterator.next();
-            Cell cell = row.getCell(13);
-
+            Cell cell = row.getCell(16);
+            if (cell == null) {
+            continue;
+            }
             Hyperlink hyperlink = cell.getHyperlink();
             if (hyperlink != null) {
 //                    System.out.println(hyperlink.getAddress());
                 URI uri = new URI(hyperlink.getAddress());
                 String[] segments = uri.getPath().split("/");
                 String username = segments[segments.length - 1];
-//                    System.out.println(username);
+                    System.out.println(username);
                 players.add(username);
             }
         }

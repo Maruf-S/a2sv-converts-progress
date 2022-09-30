@@ -160,7 +160,7 @@
   {/each}
   <div class="p-5">
     <h1 class="text-3xl font-medium flex flex-row justify-center">
-      A2SV Converts Board
+      A2SV Students Board
     </h1>
     <div class="container mx-auto shadow-sm lg:max-w-2xl p-5">
       {#each $Users as user, idx ("BD" + user.id)}
