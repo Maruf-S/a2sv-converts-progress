@@ -40,5 +40,10 @@ bootJar {
 
 jar {
 	archiveClassifier.set('')
+	manifest {
+		attributes(
+				'Main-Class': 'com.example.maruf.a2svc.A2svCApplication'
+		)
+	}
 }
 // Add these END

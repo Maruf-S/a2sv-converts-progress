@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+body {
+	font-family: 'Poppins', sans-serif;
+}
+.barContainer {
+	position: relative;
+	width: 100%;
+  }
+  .barContainer .bar {
+	height: 4px;
+	border-radius: 10px;
+	overflow: hidden;
+  }
+  .barContainer .bar div {
+	width: 25%;
+	height: 100%;
+	float: left;
+  }
+  .barContainer .bar .green {
+	background-color: green;
+  }
+  .barContainer .bar .yellow {
+	background-color: yellow;
+  }
+  .barContainer .bar .red {
+	background-color: red;
+  }

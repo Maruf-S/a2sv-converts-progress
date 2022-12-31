@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.example.maruf.a2svc.A2svCApplication
+
